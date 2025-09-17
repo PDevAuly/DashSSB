@@ -15,7 +15,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
-import { Calendar, Download, Filter, TrendingUp } from "lucide-react";
+import { CalendarIcon, ArrowDownTrayIcon, FunnelIcon, ArrowTrendingUpIcon } from "@heroicons/react/24/outline";
 
 /**
  * Soule Smart Dashboard
@@ -131,7 +131,7 @@ export default function SouleSmartDashboard() {
   }, [range]);
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="sticky top-0 z-20 bg-white/70 backdrop-blur border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -144,7 +144,7 @@ export default function SouleSmartDashboard() {
           </div>
           <div className="flex items-center gap-2">
             <button className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm hover:bg-slate-100">
-              <Calendar className="h-4 w-4" />
+              <CalendarIcon className="h-4 w-4" />
               <span>Zeitraum</span>
             </button>
             <div className="inline-flex rounded-xl bg-slate-100 p-1">
@@ -162,7 +162,7 @@ export default function SouleSmartDashboard() {
               ))}
             </div>
             <button className="inline-flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm hover:bg-slate-100">
-              <Download className="h-4 w-4" />
+              <ArrowDownTrayIcon className="h-4 w-4" />
               <span>Export</span>
             </button>
           </div>
@@ -183,7 +183,7 @@ export default function SouleSmartDashboard() {
                 segmentFilter === seg ? "bg-slate-900 text-white" : "hover:bg-slate-100"
               )}
             >
-              <Filter className="h-3.5 w-3.5" /> {seg}
+              <FunnelIcon className="h-3.5 w-3.5" /> {seg}
             </button>
           ))}
         </div>
@@ -194,7 +194,7 @@ export default function SouleSmartDashboard() {
             <div key={kpi.id} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <span className="text-sm text-slate-800">{kpi.label}</span>
-                <TrendingUp className="h-4 w-4 text-slate-700" />
+                <ArrowTrendingUpIcon className="h-4 w-4 text-slate-700" />
               </div>
               <div className="mt-2 text-2xl font-semibold">{kpi.value}</div>
               {typeof kpi.delta === "number" && (
